@@ -1,6 +1,10 @@
 # Use the official Golang image as a base image
 FROM golang:1.22.5-alpine
 
+# Metadata 
+LABEL maintainer="rmiles957@gmail.com"
+LABEL description="Ascii-art-web application container"
+
 # Set the working directory inside the container
 WORKDIR /app
 

@@ -14,22 +14,22 @@ git clone https://learn.zone01kisumu.ke/git/jwambugu/ascii-art-web.git
 
 Alternatively, download the project directly from Gitea and access it through your file manager.
 
-## Usage
+## Using Docker
 
-To run the application:
+To build and run the application using Docker:
 
 
-1. Navigate to the project directory:
+1. Build the Docker image:
 ```go
-cd ascii-art-web
+docker build -t ascii-art-web .
 ```
 
-2. Run the application:
+2. Run the Docker container:
 ```go
-go run main.go
+docker run -d -p 8000:8000 --name ascii-art-web-container ascii-art-web
 ```
 
-3. Open a web browser at the provided port: [http://localhost:8080](http://localhost:8080)
+3. Open a web browser at the provided port:  [http://localhost:8000](http://localhost:8000)
 
 ## Implementation
 

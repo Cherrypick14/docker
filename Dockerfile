@@ -1,11 +1,11 @@
 # Use the official Golang image as a base image
-FROM golang:1.19-alpine
+FROM golang:1.22.5-alpine
 
 # Set the working directory inside the container
 WORKDIR /app
 
 # Copy the Go module files
-COPY go.mod go.sum ./
+COPY go.mod ./
 
 # Download dependencies
 RUN go mod download
@@ -17,7 +17,7 @@ COPY . .
 RUN go build -o /ascii-art-web
 
 # Expose the port the app runs on
-EXPOSE 8080
+EXPOSE 8000
 
 # Set the entrypoint command to run the web server
 CMD ["/ascii-art-web"]

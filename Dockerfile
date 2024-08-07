@@ -1,13 +1,16 @@
 # Use the official Golang image as a base image
-FROM golang:1.22.5-alpine
+FROM ubuntu
 
 # Metadata 
-LABEL maintainer="rmiles957@gmail.com"
+LABEL maintainer="cherrypicklet@gmail.com"
 LABEL description="Ascii-art-web application container"
 LABEL version="1.0"
 LABEL license="MIT"
-LABEL org.opencontainers.image.source="https://github.com/your-repo/ascii-art-web"
 
+# Install requred packages
+RUN apt-get update && apt-get install -y \
+    git \
+    golang
 # Set the working directory inside the container
 WORKDIR /app
 
